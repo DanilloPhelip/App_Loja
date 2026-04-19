@@ -12,8 +12,7 @@ from perfil import perfil_view
 def main(page: ft.Page):
     page.vertical_alignment = ft.MainAxisAlignment.START
     page.window_max_height = 750
-    page.window_width = 400
-    
+    page.window_max_width = 400    
     page.bgcolor = "#36003D"
     
 
