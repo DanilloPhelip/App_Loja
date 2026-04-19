@@ -11,8 +11,8 @@ from perfil import perfil_view
 
 def main(page: ft.Page):
     page.vertical_alignment = ft.MainAxisAlignment.START
-    page.window_max_height = 750
-    page.window_max_width = 400    
+    page.window.max_height = 850
+    page.window.max_width = 400   
     page.bgcolor = "#36003D"
     
 
@@ -139,7 +139,6 @@ def main(page: ft.Page):
     )
 
 
-
     Espaco_1 = ft.Text("            ")
     Text_Principal = ft.Image(
         src="personagem.png",   # caminho da imagem dentro da pasta assets
@@ -155,17 +154,16 @@ def main(page: ft.Page):
         e.page.views.append(
             ft.View(
                 "/carrinho",
-                [
-                    ft.Text("Página do Carrinho"),
-                    ft.ElevatedButton(
-                        "Voltar",
+                [ft.IconButton(
+                        icon=ft.icons.ARROW_BACK,
+                        icon_color=ft.Colors.WHITE,
+                        icon_size=25,
                         on_click=lambda _: voltar_inicio(e.page)
                     )
                 ], bgcolor="#36003D"
             )
         )
         e.page.update()
-
 
     def voltar_inicio(page: ft.Page):
         page.views.clear()
@@ -183,8 +181,6 @@ def main(page: ft.Page):
         )
         page.update()
 
-    def main(page: ft.Page):
-        voltar_inicio(page)
         
     Text_secundário = ft.GestureDetector(
         content=ft.Image(
@@ -196,20 +192,6 @@ def main(page: ft.Page):
         on_tap=carrinho_clicado
     )
 
-
-
-    Espaco_2 = ft.Text("")
-    Text_Principal = ft.Image(
-        src="personagem.png",   # caminho da imagem dentro da pasta assets
-        width=150,                   # largura da imagem
-        height=150,                   # altura da imagem
-        fit=ft.ImageFit.CONTAIN       # ajusta a imagem sem cortar
-    )
-
-    
-   # colocar o page.navigation_drawer edef carrinho_clicado(e):,  def voltar_inicio(page): em 
-   # arquivos diferente para serem invocados
-
     def route_change(e):
         page.views.clear()
 
@@ -220,7 +202,8 @@ def main(page: ft.Page):
                     ft.View(
                         "/",
                         [
-                            ft.Column([conteudo_topo, Conteudo_mix_itens, conteudo_area], alignment=ft.MainAxisAlignment.CENTER)
+                            ft.Column([conteudo_topo, Conteudo_mix_itens, conteudo_area], 
+                                      alignment=ft.MainAxisAlignment.CENTER)
                         ],
                         bgcolor="#36003D"
                     )

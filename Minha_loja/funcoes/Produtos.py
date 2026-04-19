@@ -3,6 +3,11 @@ import flet as ft
 
 
 #############################################################################################################
+
+
+
+
+
 def criar_item_Pipoca_mitoca(): 
     Pipoka_mitoka = ft.Image(
             src="pipoca_mitoka.png",   # caminho da imagem do carrinho dentro da pasta assets

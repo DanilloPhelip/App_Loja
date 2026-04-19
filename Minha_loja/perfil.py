@@ -10,7 +10,7 @@ def perfil_view():
                     ft.IconButton(
                         icon=ft.icons.ARROW_BACK,
                         icon_color=ft.Colors.WHITE,
-                        icon_size=32,
+                        icon_size=25,
                         on_click=lambda e: e.page.go("/")  # volta para a tela inicial
                     )
                 ],
